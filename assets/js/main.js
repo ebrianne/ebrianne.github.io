@@ -146,23 +146,23 @@
     });
   }
 
-  // Porfolio isotope and filter
+  // Projects isotope and filter
   $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item'
+    var projectsIsotope = $(".projects-container").isotope({
+      itemSelector: ".projects-item",
     });
 
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
+    $('#projects-filters li').on('click', function() {
+      $("#projects-filters li").removeClass("filter-active");
       $(this).addClass('filter-active');
 
-      portfolioIsotope.isotope({
+      projectsIsotope.isotope({
         filter: $(this).data('filter')
       });
       aos_init();
     });
 
-    // Initiate venobox (lightbox feature used in portofilo)
+    // Initiate venobox (lightbox feature used in projects)
     $('.venobox').venobox({
       'share': false
     });
@@ -170,22 +170,6 @@
     // Initiate aos_init() function
     aos_init();
 
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
-
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
   });
 
 })(jQuery);
